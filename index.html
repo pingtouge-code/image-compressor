@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部标题区域 -->
+    <header class="header">
+        <h1>图片压缩工具</h1>
+        <p>简单、快速、高效的图片压缩服务</p>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-container">
+        <!-- 上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-box">
+                <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <p>拖拽图片到这里 或 <button class="select-btn">选择文件</button></p>
+                <p class="upload-tip">支持 JPG、PNG、WebP 格式，最大 5MB</p>
+            </div>
+        </div>
+
+        <!-- 压缩设置区域 -->
+        <div class="compress-settings">
+            <div class="setting-item">
+                <label>压缩质量</label>
+                <input type="range" min="0" max="100" value="80" id="qualitySlider">
+                <span id="qualityValue" style="margin-left: 1rem;">80%</span>
+            </div>
+            <div class="setting-item">
+                <label>输出尺寸</label>
+                <select id="sizeSelect" style="padding: 0.5rem; border-radius: 8px; border: 1px solid #d2d2d7;">
+                    <option value="original">原始尺寸</option>
+                    <option value="1920">1920px</option>
+                    <option value="1280">1280px</option>
+                    <option value="800">800px</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label>自定义尺寸</label>
+                <div class="size-inputs">
+                    <div class="input-group">
+                        <input type="number" id="widthInput" placeholder="宽度" min="1" max="9999">
+                        <span class="unit">px</span>
+                    </div>
+                    <span class="separator">×</span>
+                    <div class="input-group">
+                        <input type="number" id="heightInput" placeholder="高度" min="1" max="9999">
+                        <span class="unit">px</span>
+                    </div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="keepRatio" checked>
+                        保持比例
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 预览区域 -->
+        <div class="preview-area">
+            <div class="preview-container">
+                <div class="preview-original">
+                    <h3>原图</h3>
+                    <div class="preview-box" id="originalPreview"></div>
+                    <div class="size-info">
+                        文件大小: <span id="originalSize">-</span>
+                    </div>
+                </div>
+                <div class="preview-compressed">
+                    <h3>压缩后</h3>
+                    <div class="preview-box" id="compressedPreview"></div>
+                    <div class="size-info">
+                        文件大小: <span id="compressedSize">-</span>
+                    </div>
+                </div>
+            </div>
+            <button class="download-btn" disabled>下载压缩后的图片</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

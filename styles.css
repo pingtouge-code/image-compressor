@@ -1,0 +1,493 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #1d1d1f;
+    background-color: #fbfbfd;
+}
+
+/* 顶部标题样式 */
+.header {
+    text-align: center;
+    padding: 3rem 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #86868b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 主容器样式 */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* 上传区域样式 */
+.upload-area {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed #86868b;
+    border-radius: 18px;
+    padding: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: #0071e3;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.upload-box {
+    padding: 2rem;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.select-btn {
+    background-color: #0071e3;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 980px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.select-btn:hover {
+    background-color: #0077ED;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+.upload-tip {
+    color: #86868b;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* 压缩设置区域样式 */
+.compress-settings {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 18px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.setting-item label {
+    width: 120px;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #0071e3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* 优化滑块样式 */
+input[type="range"]::-webkit-slider-thumb:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    background: #0077ED;
+}
+
+/* 为滑块添加更多浏览器兼容性 */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #0071e3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #0071e3;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+/* 滑块轨道的样式 */
+input[type="range"]::-moz-range-track {
+    width: 200px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+}
+
+input[type="range"]::-ms-track {
+    width: 200px;
+    height: 4px;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #e0e0e0;
+    border-radius: 2px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #e0e0e0;
+    border-radius: 2px;
+}
+
+/* 优化选择框样式 */
+select {
+    /* 添加标准属性和浏览器前缀 */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    /* 其他样式保持不变 */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    padding-right: 2.5rem !important;
+}
+
+/* 移除 Firefox 的默认箭头 */
+select::-ms-expand {
+    display: none;
+}
+
+/* 为 IE 添加自定义样式 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    select {
+        padding-right: 2rem;
+    }
+}
+
+/* 预览区域样式 */
+.preview-area {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.preview-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.preview-original,
+.preview-compressed {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.preview-box {
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.preview-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    -webkit-animation: scaleIn 0.3s ease-out;
+    -moz-animation: scaleIn 0.3s ease-out;
+    -ms-animation: scaleIn 0.3s ease-out;
+    animation: scaleIn 0.3s ease-out;
+}
+
+@-webkit-keyframes scaleIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes scaleIn {
+    from {
+        opacity: 0;
+        -moz-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-ms-keyframes scaleIn {
+    from {
+        opacity: 0;
+        -ms-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+}
+
+.download-btn {
+    background-color: #0071e3;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 980px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover:not(:disabled) {
+    background-color: #0077ED;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+.download-btn:disabled {
+    background-color: #d2d2d7;
+    cursor: not-allowed;
+}
+
+/* 文件大小显示 */
+.size-info {
+    font-size: 0.95rem;
+    color: #86868b;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .preview-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .main-container {
+        padding: 0 1rem;
+    }
+}
+
+/* 添加页面过渡动画 */
+.main-container > * {
+    -webkit-animation: fadeIn 0.3s ease-out;
+    -moz-animation: fadeIn 0.3s ease-out;
+    -ms-animation: fadeIn 0.3s ease-out;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -moz-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-ms-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -ms-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 添加尺寸输入框样式 */
+.size-inputs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group input[type="number"] {
+    width: 100px;
+    padding: 0.5rem;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    -moz-appearance: textfield;
+}
+
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.unit {
+    position: absolute;
+    right: 10px;
+    color: #86868b;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.separator {
+    color: #86868b;
+    font-size: 1.2rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1d1d1f;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #d2d2d7;
+    cursor: pointer;
+} 
